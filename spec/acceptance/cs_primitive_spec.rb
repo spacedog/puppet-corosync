@@ -162,6 +162,7 @@ NWyN0RsTXFaqowV1/HSyvfD7LoF/CrmN5gOAM3Ierv/Ti9uqGVhdGBd/kw=='
     apply_manifest(pp, catch_changes: true, debug: false, trace: true)
   end
 
+  # rubocop:disable RSpec/RepeatedExample
   it 'does set is-managed in test_md' do
     shell('crm_resource -r test_md -q') do |r|
       expect(r.stdout).to match(%r{is-managed.*false})
@@ -228,6 +229,7 @@ NWyN0RsTXFaqowV1/HSyvfD7LoF/CrmN5gOAM3Ierv/Ti9uqGVhdGBd/kw=='
       expect(r.stdout).to match(%r{target-role.*stopped})
     end
   end
+  # rubocop:enable RSpec/RepeatedExample
 
   after :all do
     cleanup_cs_resources

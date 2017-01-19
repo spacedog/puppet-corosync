@@ -103,6 +103,7 @@ NWyN0RsTXFaqowV1/HSyvfD7LoF/CrmN5gOAM3Ierv/Ti9uqGVhdGBd/kw=='
         end
       end
 
+      # rubocop:disable RSpec/RepeatedExample
       context 'with all the parameters' do
         let(:xpath) { "/cib/configuration/resources/clone[@id=\"duncan_vip_complex_clone_#{type}\"]" }
         let(:fetch_clone_command) { "cibadmin --query --xpath '#{xpath}'" }
@@ -281,6 +282,7 @@ NWyN0RsTXFaqowV1/HSyvfD7LoF/CrmN5gOAM3Ierv/Ti9uqGVhdGBd/kw=='
           end
         end
       end
+      # rubocop:enable RSpec/RepeatedExample
     end
   end
 
